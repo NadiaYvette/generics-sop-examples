@@ -35,12 +35,12 @@ main = do
   print $ decodeRoute @Route "blog/post/hello.html"
   print $ decodeRoute @Route "index.html"
   putStrLn "# RouteEncoding - iso"
-  forM_ ([Route_Index] <> fmap Route_Blog [BlogRoute_Index, BlogRoute_Post "foo"]) $ \r -> do
-    putStrLn $ "### " <> show r
-    putStrLn $ encodeRoute r
-    let r' = decodeRoute @Route (encodeRoute r)
-    print r'
-    unless (Just r == r') $ do
+  forM_ ([Route_Index] <> fmap Route_Blog [BlogRoute_Index, BlogRoute_Post "foo"]) $ \r' -> do
+    putStrLn $ "### " <> show r'
+    putStrLn $ encodeRoute r'
+    let r'' = decodeRoute @Route (encodeRoute r')
+    print r''
+    unless (Just r' == r'') $ do
       error "non"
 
   putStrLn "# QuickCheck"
