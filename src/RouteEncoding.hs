@@ -4,8 +4,6 @@
 {-# LANGUAGE UndecidableInstances #-}
 {-# LANGUAGE UndecidableSuperClasses #-}
 
-{-# HLINT ignore "Use camelCase" #-}
-
 module RouteEncoding where
 
 import Control.Monad (guard)
@@ -19,6 +17,8 @@ import GHC.TypeLits (ErrorMessage (Text), TypeError)
 import Generics.SOP
 import System.FilePath (joinPath, splitDirectories, splitExtension, (</>))
 import Test.QuickCheck
+
+{-# ANN module ("HLint ignore Use camelCase" :: String) #-}
 
 data Route
   = Route_Index

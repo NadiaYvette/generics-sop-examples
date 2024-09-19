@@ -1,13 +1,13 @@
 {-# LANGUAGE AllowAmbiguousTypes #-}
 {-# LANGUAGE DeriveAnyClass #-}
 
-{-# HLINT ignore "Use camelCase" #-}
-
 module Equality where
 
 import Data.Foldable (foldl')
 import GHC.Generics qualified as GHC
 import Generics.SOP
+
+{-# ANN module ("HLint: ignore Use camelCase" :: String) #-}
 
 data These a b
   = This a
